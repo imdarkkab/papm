@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Telosys Database Repository --><root>
+<tableList databaseId="0" databaseName="MYSQL" databaseProductName="MySQL" generation="2558-02-27 16:49:47">
+<table catalog="papm" databaseType="TABLE" javaBean="Corporate" name="corporate" schema="">
+<column dbAutoIncremented="true" dbDefaultValue="" dbName="corporate_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="corporateId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Corporate Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="corporate_name" dbNotNull="true" dbPosition="2" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="corporateName" javaType="java.lang.String" jdbcTypeCode="12" label="Corporate Name" maxLength="40" notEmpty="true" notNull="true" selected="true"/>
+<column dateType="DT" dbDefaultValue="" dbName="created_at" dbNotNull="true" dbPosition="3" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="createdAt" javaType="java.util.Date" jdbcTypeCode="93" label="Created At" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="created_by" dbNotNull="true" dbPosition="4" dbSize="10" dbTypeName="INT" inputType="number" javaName="createdBy" javaType="java.lang.Integer" jdbcTypeCode="4" label="Created By" notNull="true" selected="true"/>
+<column dateType="DT" dbDefaultValue="" dbName="updated_at" dbNotNull="false" dbPosition="5" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="updatedAt" javaType="java.util.Date" jdbcTypeCode="93" label="Updated At" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="updated_by" dbNotNull="false" dbPosition="6" dbSize="10" dbTypeName="INT" inputType="number" javaName="updatedBy" javaType="java.lang.Integer" jdbcTypeCode="4" label="Updated By" notNull="false" selected="true"/>
+</table>
+<table catalog="papm" databaseType="TABLE" javaBean="Employee" name="employee" schema="">
+<column dbAutoIncremented="true" dbDefaultValue="" dbName="employee_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="employeeId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Employee Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="employee_name" dbNotNull="true" dbPosition="2" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="employeeName" javaType="java.lang.String" jdbcTypeCode="12" label="Employee Name" maxLength="40" notEmpty="true" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="corporate_id" dbNotNull="true" dbPosition="3" dbSize="10" dbTypeName="INT" inputType="number" javaName="corporateId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Corporate Id" notNull="true" selected="true"/>
+<column dateType="DT" dbDefaultValue="" dbName="created_at" dbNotNull="true" dbPosition="4" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="createdAt" javaType="java.util.Date" jdbcTypeCode="93" label="Created At" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="created_by" dbNotNull="true" dbPosition="5" dbSize="10" dbTypeName="INT" inputType="number" javaName="createdBy" javaType="java.lang.Integer" jdbcTypeCode="4" label="Created By" notNull="true" selected="true"/>
+<column dateType="DT" dbDefaultValue="" dbName="updated_at" dbNotNull="false" dbPosition="6" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="updatedAt" javaType="java.util.Date" jdbcTypeCode="93" label="Updated At" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="updated_by" dbNotNull="false" dbPosition="7" dbSize="10" dbTypeName="INT" inputType="number" javaName="updatedBy" javaType="java.lang.Integer" jdbcTypeCode="4" label="Updated By" notNull="false" selected="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="employee_user" id="LINK_FK_employee_user_I" inverseSideOf="LINK_FK_employee_user_O" javaName="listOfUser" javaType="java.util.List" joinTableName="" mappedBy="employee" optional="UNDEFINED" owningSide="false" sourceTableName="employee" targetEntity="User" targetTableName="user" used="true"/>
+</table>
+<table catalog="papm" databaseType="TABLE" javaBean="Language" name="language" schema="">
+<column dbAutoIncremented="true" dbDefaultValue="" dbName="language_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="languageId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Language Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="language" dbNotNull="true" dbPosition="2" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="language" javaType="java.lang.String" jdbcTypeCode="12" label="Language" maxLength="40" notEmpty="true" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="short_name" dbNotNull="false" dbPosition="3" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="shortName" javaType="java.lang.String" jdbcTypeCode="12" label="Short Name" maxLength="40" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="flag_img" dbNotNull="true" dbPosition="4" dbSize="256" dbTypeName="VARCHAR" inputType="text" javaName="flagImg" javaType="java.lang.String" jdbcTypeCode="12" label="Flag Img" maxLength="256" notEmpty="true" notNull="true" selected="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="language_messages" id="LINK_FK_language_messages_I" inverseSideOf="LINK_FK_language_messages_O" javaName="listOfMessages" javaType="java.util.List" joinTableName="" mappedBy="language" optional="UNDEFINED" owningSide="false" sourceTableName="language" targetEntity="Messages" targetTableName="messages" used="true"/>
+</table>
+<table catalog="papm" databaseType="TABLE" javaBean="MenuMain" name="menu_main" schema="">
+<column dbAutoIncremented="true" dbDefaultValue="" dbName="menu_main_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="menuMainId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Menu Main Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="label" dbNotNull="false" dbPosition="2" dbSize="250" dbTypeName="VARCHAR" inputType="text" javaName="label" javaType="java.lang.String" jdbcTypeCode="12" label="Label" maxLength="250" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="seq" dbNotNull="false" dbPosition="3" dbSize="10" dbTypeName="INT" inputType="number" javaName="seq" javaType="java.lang.Integer" jdbcTypeCode="4" label="Seq" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbForeignKey="true" dbName="message_id" dbNotNull="false" dbPosition="4" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="messageId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Message Id" notNull="false" selected="true"/>
+<fk name="messages_menu_main">
+<fkcol colname="message_id" colref="message_id" deferrable="7" deleterule="3" sequence="1" tablename="menu_main" tableref="messages" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="messages_menu_main" id="LINK_FK_messages_menu_main_O" inverseSideOf="" javaName="messages" javaType="Messages" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="menu_main" targetEntity="Messages" targetTableName="messages" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="message_id" nullable="true" referencedColumnName="message_id" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+<table catalog="papm" databaseType="TABLE" javaBean="MenuSub" name="menu_sub" schema="">
+<column dbAutoIncremented="true" dbDefaultValue="" dbName="menu_sub_is" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="menuSubIs" javaType="java.lang.Integer" jdbcTypeCode="4" label="Menu Sub Is" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="menu_main_id" dbNotNull="false" dbPosition="2" dbSize="10" dbTypeName="INT" inputType="number" javaName="menuMainId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Menu Main Id" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="label" dbNotNull="true" dbPosition="3" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="label" javaType="java.lang.String" jdbcTypeCode="12" label="Label" maxLength="40" notEmpty="true" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="link" dbNotNull="true" dbPosition="4" dbSize="256" dbTypeName="VARCHAR" inputType="text" javaName="link" javaType="java.lang.String" jdbcTypeCode="12" label="Link" maxLength="256" notEmpty="true" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="parent_id" dbNotNull="false" dbPosition="5" dbSize="10" dbTypeName="INT" inputType="number" javaName="parentId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Parent Id" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="seq" dbNotNull="false" dbPosition="6" dbSize="10" dbTypeName="INT" inputType="number" javaName="seq" javaType="java.lang.Integer" jdbcTypeCode="4" label="Seq" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="is_active" dbNotNull="true" dbPosition="7" dbSize="1" dbTypeName="BIT" inputType="checkbox" javaName="isActive" javaType="java.lang.Boolean" jdbcTypeCode="-7" label="Is Active" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbForeignKey="true" dbName="message_id" dbNotNull="false" dbPosition="8" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="messageId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Message Id" notNull="false" selected="true"/>
+<fk name="messages_menu_sub">
+<fkcol colname="message_id" colref="message_id" deferrable="7" deleterule="3" sequence="1" tablename="menu_sub" tableref="messages" updaterule="3"/>
+</fk>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="menu_sub_permission" id="LINK_FK_menu_sub_permission_I" inverseSideOf="LINK_FK_menu_sub_permission_O" javaName="listOfPermission" javaType="java.util.List" joinTableName="" mappedBy="menuSub" optional="UNDEFINED" owningSide="false" sourceTableName="menu_sub" targetEntity="Permission" targetTableName="permission" used="true"/>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="messages_menu_sub" id="LINK_FK_messages_menu_sub_O" inverseSideOf="" javaName="messages" javaType="Messages" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="menu_sub" targetEntity="Messages" targetTableName="messages" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="message_id" nullable="true" referencedColumnName="message_id" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+<table catalog="papm" databaseType="TABLE" javaBean="Messages" name="messages" schema="">
+<column dbAutoIncremented="true" dbDefaultValue="" dbName="message_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="messageId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Message Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbForeignKey="true" dbName="language_id" dbNotNull="false" dbPosition="2" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="languageId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Language Id" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="message_key" dbNotNull="true" dbPosition="3" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="messageKey" javaType="java.lang.String" jdbcTypeCode="12" label="Message Key" maxLength="40" notEmpty="true" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="message" dbNotNull="true" dbPosition="4" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="message" javaType="java.lang.String" jdbcTypeCode="12" label="Message" maxLength="40" notEmpty="true" notNull="true" selected="true"/>
+<fk name="language_messages">
+<fkcol colname="language_id" colref="language_id" deferrable="7" deleterule="3" sequence="1" tablename="messages" tableref="language" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="language_messages" id="LINK_FK_language_messages_O" inverseSideOf="" javaName="language" javaType="Language" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="messages" targetEntity="Language" targetTableName="language" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="language_id" nullable="true" referencedColumnName="language_id" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="messages_menu_main" id="LINK_FK_messages_menu_main_I" inverseSideOf="LINK_FK_messages_menu_main_O" javaName="listOfMenuMain" javaType="java.util.List" joinTableName="" mappedBy="messages" optional="UNDEFINED" owningSide="false" sourceTableName="messages" targetEntity="MenuMain" targetTableName="menu_main" used="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="messages_menu_sub" id="LINK_FK_messages_menu_sub_I" inverseSideOf="LINK_FK_messages_menu_sub_O" javaName="listOfMenuSub" javaType="java.util.List" joinTableName="" mappedBy="messages" optional="UNDEFINED" owningSide="false" sourceTableName="messages" targetEntity="MenuSub" targetTableName="menu_sub" used="true"/>
+</table>
+<table catalog="papm" databaseType="TABLE" javaBean="Permission" name="permission" schema="">
+<column dbAutoIncremented="true" dbDefaultValue="" dbName="permission_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="permissionId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Permission Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="permission_name" dbNotNull="true" dbPosition="2" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="permissionName" javaType="java.lang.String" jdbcTypeCode="12" label="Permission Name" maxLength="40" notEmpty="true" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbForeignKey="true" dbName="menu_id" dbNotNull="false" dbPosition="3" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="menuId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Menu Id" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="can_view" dbNotNull="true" dbPosition="4" dbSize="1" dbTypeName="BIT" inputType="checkbox" javaName="canView" javaType="java.lang.Boolean" jdbcTypeCode="-7" label="Can View" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="can_edit" dbNotNull="true" dbPosition="5" dbSize="1" dbTypeName="BIT" inputType="checkbox" javaName="canEdit" javaType="java.lang.Boolean" jdbcTypeCode="-7" label="Can Edit" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="can_insert" dbNotNull="true" dbPosition="6" dbSize="1" dbTypeName="BIT" inputType="checkbox" javaName="canInsert" javaType="java.lang.Boolean" jdbcTypeCode="-7" label="Can Insert" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="can_delete" dbNotNull="true" dbPosition="7" dbSize="1" dbTypeName="BIT" inputType="checkbox" javaName="canDelete" javaType="java.lang.Boolean" jdbcTypeCode="-7" label="Can Delete" notNull="true" selected="true"/>
+<fk name="menu_sub_permission">
+<fkcol colname="menu_id" colref="menu_sub_is" deferrable="7" deleterule="3" sequence="1" tablename="permission" tableref="menu_sub" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="menu_sub_permission" id="LINK_FK_menu_sub_permission_O" inverseSideOf="" javaName="menuSub" javaType="MenuSub" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="permission" targetEntity="MenuSub" targetTableName="menu_sub" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="menu_id" nullable="true" referencedColumnName="menu_sub_is" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="permission_user_permission" id="LINK_FK_permission_user_permission_I" inverseSideOf="LINK_FK_permission_user_permission_O" javaName="listOfUserPermission" javaType="java.util.List" joinTableName="" mappedBy="permission" optional="UNDEFINED" owningSide="false" sourceTableName="permission" targetEntity="UserPermission" targetTableName="user_permission" used="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="permission_role_permission" id="LINK_FK_permission_role_permission_I" inverseSideOf="LINK_FK_permission_role_permission_O" javaName="listOfRolePermission" javaType="java.util.List" joinTableName="" mappedBy="permission" optional="UNDEFINED" owningSide="false" sourceTableName="permission" targetEntity="RolePermission" targetTableName="role_permission" used="true"/>
+</table>
+<table catalog="papm" databaseType="TABLE" javaBean="Project" name="project" schema="">
+<column dbAutoIncremented="true" dbDefaultValue="" dbName="project_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="projectId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Project Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="project_name" dbNotNull="false" dbPosition="2" dbSize="256" dbTypeName="VARCHAR" inputType="text" javaName="projectName" javaType="java.lang.String" jdbcTypeCode="12" label="Project Name" maxLength="256" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="project_code" dbNotNull="false" dbPosition="3" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="projectCode" javaType="java.lang.String" jdbcTypeCode="12" label="Project Code" maxLength="40" notNull="false" selected="true"/>
+<column dateType="DT" dbDefaultValue="" dbName="created_at" dbNotNull="false" dbPosition="4" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="createdAt" javaType="java.util.Date" jdbcTypeCode="93" label="Created At" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="created_by" dbNotNull="false" dbPosition="5" dbSize="10" dbTypeName="INT" inputType="number" javaName="createdBy" javaType="java.lang.Integer" jdbcTypeCode="4" label="Created By" notNull="false" selected="true"/>
+<column dateType="DT" dbDefaultValue="" dbName="updated_at" dbNotNull="false" dbPosition="6" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="updatedAt" javaType="java.util.Date" jdbcTypeCode="93" label="Updated At" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="updated_by" dbNotNull="false" dbPosition="7" dbSize="10" dbTypeName="INT" inputType="number" javaName="updatedBy" javaType="java.lang.Integer" jdbcTypeCode="4" label="Updated By" notNull="false" selected="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="project_project_user" id="LINK_FK_project_project_user_I" inverseSideOf="LINK_FK_project_project_user_O" javaName="listOfProjectUser" javaType="java.util.List" joinTableName="" mappedBy="project" optional="UNDEFINED" owningSide="false" sourceTableName="project" targetEntity="ProjectUser" targetTableName="project_user" used="true"/>
+</table>
+<table catalog="papm" databaseType="TABLE" javaBean="ProjectUser" name="project_user" schema="">
+<column dbAutoIncremented="true" dbDefaultValue="" dbName="project_user_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="projectUserId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Project User Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbForeignKey="true" dbName="project_id" dbNotNull="true" dbPosition="2" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="projectId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Project Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbForeignKey="true" dbName="user_id" dbNotNull="true" dbPosition="3" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="userId" javaType="java.lang.Integer" jdbcTypeCode="4" label="User Id" notNull="true" selected="true"/>
+<column dateType="DT" dbDefaultValue="" dbName="created_at" dbNotNull="false" dbPosition="4" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="createdAt" javaType="java.util.Date" jdbcTypeCode="93" label="Created At" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="created_by" dbNotNull="false" dbPosition="5" dbSize="10" dbTypeName="INT" inputType="number" javaName="createdBy" javaType="java.lang.Integer" jdbcTypeCode="4" label="Created By" notNull="false" selected="true"/>
+<column dateType="DT" dbDefaultValue="" dbName="updated_at" dbNotNull="false" dbPosition="6" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="updatedAt" javaType="java.util.Date" jdbcTypeCode="93" label="Updated At" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="updated_by" dbNotNull="false" dbPosition="7" dbSize="10" dbTypeName="INT" inputType="number" javaName="updatedBy" javaType="java.lang.Integer" jdbcTypeCode="4" label="Updated By" notNull="false" selected="true"/>
+<fk name="project_project_user">
+<fkcol colname="project_id" colref="project_id" deferrable="7" deleterule="3" sequence="1" tablename="project_user" tableref="project" updaterule="3"/>
+</fk>
+<fk name="user_project_user">
+<fkcol colname="user_id" colref="user_id" deferrable="7" deleterule="3" sequence="1" tablename="project_user" tableref="user" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="project_project_user" id="LINK_FK_project_project_user_O" inverseSideOf="" javaName="project" javaType="Project" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="project_user" targetEntity="Project" targetTableName="project" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="project_id" nullable="true" referencedColumnName="project_id" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="user_project_user" id="LINK_FK_user_project_user_O" inverseSideOf="" javaName="user" javaType="User" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="project_user" targetEntity="User" targetTableName="user" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="user_id" nullable="true" referencedColumnName="user_id" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+<table catalog="papm" databaseType="TABLE" javaBean="Role" name="role" schema="">
+<column dbAutoIncremented="true" dbDefaultValue="" dbName="role_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="roleId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Role Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="role_name" dbNotNull="false" dbPosition="2" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="roleName" javaType="java.lang.String" jdbcTypeCode="12" label="Role Name" maxLength="40" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="description" dbNotNull="false" dbPosition="3" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="40" notNull="false" selected="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="role_role_permission" id="LINK_FK_role_role_permission_I" inverseSideOf="LINK_FK_role_role_permission_O" javaName="listOfRolePermission" javaType="java.util.List" joinTableName="" mappedBy="role" optional="UNDEFINED" owningSide="false" sourceTableName="role" targetEntity="RolePermission" targetTableName="role_permission" used="true"/>
+</table>
+<table catalog="papm" databaseType="TABLE" javaBean="RolePermission" name="role_permission" schema="">
+<column dbAutoIncremented="true" dbDefaultValue="" dbName="role_permission_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="rolePermissionId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Role Permission Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbForeignKey="true" dbName="role_id" dbNotNull="true" dbPosition="2" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="roleId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Role Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbForeignKey="true" dbName="permission_id" dbNotNull="true" dbPosition="3" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="permissionId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Permission Id" notNull="true" selected="true"/>
+<fk name="permission_role_permission">
+<fkcol colname="permission_id" colref="permission_id" deferrable="7" deleterule="3" sequence="1" tablename="role_permission" tableref="permission" updaterule="3"/>
+</fk>
+<fk name="role_role_permission">
+<fkcol colname="role_id" colref="role_id" deferrable="7" deleterule="3" sequence="1" tablename="role_permission" tableref="role" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="permission_role_permission" id="LINK_FK_permission_role_permission_O" inverseSideOf="" javaName="permission" javaType="Permission" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="role_permission" targetEntity="Permission" targetTableName="permission" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="permission_id" nullable="true" referencedColumnName="permission_id" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="role_role_permission" id="LINK_FK_role_role_permission_O" inverseSideOf="" javaName="role" javaType="Role" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="role_permission" targetEntity="Role" targetTableName="role" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="role_id" nullable="true" referencedColumnName="role_id" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+<table catalog="papm" databaseType="TABLE" javaBean="User" name="user" schema="">
+<column dbAutoIncremented="true" dbDefaultValue="" dbName="user_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="userId" javaType="java.lang.Integer" jdbcTypeCode="4" label="User Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="user_name" dbNotNull="true" dbPosition="2" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="userName" javaType="java.lang.String" jdbcTypeCode="12" label="User Name" maxLength="40" notEmpty="true" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="password" dbNotNull="true" dbPosition="3" dbSize="40" dbTypeName="VARCHAR" inputType="text" javaName="password" javaType="java.lang.String" jdbcTypeCode="12" label="Password" maxLength="40" notEmpty="true" notNull="true" selected="true"/>
+<column dateType="DT" dbDefaultValue="" dbName="created_at" dbNotNull="true" dbPosition="4" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="createdAt" javaType="java.util.Date" jdbcTypeCode="93" label="Created At" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbName="created_by" dbNotNull="true" dbPosition="5" dbSize="10" dbTypeName="INT" inputType="number" javaName="createdBy" javaType="java.lang.Integer" jdbcTypeCode="4" label="Created By" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbForeignKey="true" dbName="employee_id" dbNotNull="false" dbPosition="6" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="employeeId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Employee Id" notNull="false" selected="true"/>
+<column dateType="DT" dbDefaultValue="" dbName="updated_at" dbNotNull="false" dbPosition="7" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="updatedAt" javaType="java.util.Date" jdbcTypeCode="93" label="Updated At" notNull="false" selected="true"/>
+<column dbDefaultValue="" dbName="updated_by" dbNotNull="false" dbPosition="8" dbSize="10" dbTypeName="INT" inputType="number" javaName="updatedBy" javaType="java.lang.Integer" jdbcTypeCode="4" label="Updated By" notNull="false" selected="true"/>
+<column dbDefaultValue="0" dbName="active" dbNotNull="true" dbPosition="9" dbSize="0" dbTypeName="BIT" inputType="checkbox" javaName="active" javaType="java.lang.Boolean" jdbcTypeCode="-7" label="Active" notNull="true" selected="true"/>
+<fk name="employee_user">
+<fkcol colname="employee_id" colref="employee_id" deferrable="7" deleterule="3" sequence="1" tablename="user" tableref="employee" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="employee_user" id="LINK_FK_employee_user_O" inverseSideOf="" javaName="employee" javaType="Employee" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="user" targetEntity="Employee" targetTableName="employee" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="employee_id" nullable="true" referencedColumnName="employee_id" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="user_user_permission" id="LINK_FK_user_user_permission_I" inverseSideOf="LINK_FK_user_user_permission_O" javaName="listOfUserPermission" javaType="java.util.List" joinTableName="" mappedBy="user" optional="UNDEFINED" owningSide="false" sourceTableName="user" targetEntity="UserPermission" targetTableName="user_permission" used="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="user_project_user" id="LINK_FK_user_project_user_I" inverseSideOf="LINK_FK_user_project_user_O" javaName="listOfProjectUser" javaType="java.util.List" joinTableName="" mappedBy="user" optional="UNDEFINED" owningSide="false" sourceTableName="user" targetEntity="ProjectUser" targetTableName="project_user" used="true"/>
+</table>
+<table catalog="papm" databaseType="TABLE" javaBean="UserPermission" name="user_permission" schema="">
+<column dbAutoIncremented="true" dbDefaultValue="" dbName="user_permission_id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="userPermissionId" javaType="java.lang.Integer" jdbcTypeCode="4" label="User Permission Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbForeignKey="true" dbName="user_id" dbNotNull="true" dbPosition="2" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="userId" javaType="java.lang.Integer" jdbcTypeCode="4" label="User Id" notNull="true" selected="true"/>
+<column dbDefaultValue="" dbForeignKey="true" dbName="permission_id" dbNotNull="true" dbPosition="3" dbSize="10" dbTypeName="INT UNSIGNED" inputType="number" javaName="permissionId" javaType="java.lang.Integer" jdbcTypeCode="4" label="Permission Id" notNull="true" selected="true"/>
+<fk name="permission_user_permission">
+<fkcol colname="permission_id" colref="permission_id" deferrable="7" deleterule="3" sequence="1" tablename="user_permission" tableref="permission" updaterule="3"/>
+</fk>
+<fk name="user_user_permission">
+<fkcol colname="user_id" colref="user_id" deferrable="7" deleterule="3" sequence="1" tablename="user_permission" tableref="user" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="permission_user_permission" id="LINK_FK_permission_user_permission_O" inverseSideOf="" javaName="permission" javaType="Permission" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="user_permission" targetEntity="Permission" targetTableName="permission" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="permission_id" nullable="true" referencedColumnName="permission_id" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="user_user_permission" id="LINK_FK_user_user_permission_O" inverseSideOf="" javaName="user" javaType="User" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="user_permission" targetEntity="User" targetTableName="user" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="user_id" nullable="true" referencedColumnName="user_id" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+</tableList>
+</root>

@@ -1,0 +1,41 @@
+Update date : Sat Feb 28 11:56:14 ICT 2015
+ 
+ Table 'corporate' found in repository
+ (=) table 'corporate' unchanged
+ 
+ Table 'employee' found in repository
+ (=) table 'employee' unchanged
+ 
+ Table 'language' found in repository
+ (=) table 'language' unchanged
+ 
+ Table 'menu_main' found in repository
+ (=) table 'menu_main' unchanged
+ 
+ Table 'menu_sub' found in repository
+ (=) table 'menu_sub' unchanged
+ 
+ Table 'messages' found in repository
+ (=) table 'messages' unchanged
+ 
+ Table 'permission' found in repository
+ (=) table 'permission' unchanged
+ 
+ Table 'project' found in repository
+ (=) table 'project' unchanged
+ 
+ Table 'project_user' found in repository
+ (=) table 'project_user' unchanged
+ 
+ Table 'role' found in repository
+ (=) table 'role' unchanged
+ 
+ Table 'role_permission' found in repository
+ (=) table 'role_permission' unchanged
+ 
+ Table 'user' found in repository
+ . Column 'active' added
+ (*) table 'user' updated : 1 change(s)
+ 
+ Table 'user_permission' found in repository
+ (=) table 'user_permission' unchanged
